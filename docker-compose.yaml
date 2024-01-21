@@ -38,6 +38,7 @@ services:
 
   nitro:
     image: offchainlabs/nitro-node:v2.1.3-e815395
+    restart: always
     ports:
       - "127.0.0.1:8449:8449"
     volumes:
@@ -46,6 +47,7 @@ services:
 
   das-server:
     image: offchainlabs/nitro-node:v2.1.0-beta.15-38ad1f1
+    restart: always
     entrypoint: [ "/bin/bash", "/das-server.sh" ]
     volumes:
       - "./config:/home/user/.arbitrum"
