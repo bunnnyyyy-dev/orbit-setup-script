@@ -6,6 +6,7 @@ import { createERC20Bridge } from './createTokenBridge'
 import { l3Configuration } from './l3Configuration'
 import { defaultRunTimeState, RuntimeState } from './runTimeState'
 import { transferOwner } from './transferOwnership'
+import { l3ConfigurationUpdate } from './l3ConfigurationUpdate'
 // Delay function
 function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -167,7 +168,7 @@ async function main() {
       console.log(
         'Running l3Configuration script to configure your Orbit chain 📝📝📝📝📝'
       )
-      await l3Configuration(privateKey, L2_RPC_URL, L3_RPC_URL)
+      await l3ConfigurationUpdate(privateKey, L2_RPC_URL, L3_RPC_URL)
       rs.l3config = true
     }
     ////////////////////////////////
